@@ -6,7 +6,6 @@ on:
     branches:
       - develop
   
-
 jobs:
   test:
     runs-on: macos-latest
@@ -17,7 +16,7 @@ jobs:
       - name: Set up ruby env
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.0
+          ruby-version: 2.6.10
           bundler-cache: true
 
       - name: Cancel Previous Runs
@@ -31,7 +30,7 @@ jobs:
           xcode-version: latest-stable
 
       - name: Install Bundler
-        run: gem install bundler -v 2.6.7
+        run: gem install bundler
 
       - name: Install gems
         run: bundle install
