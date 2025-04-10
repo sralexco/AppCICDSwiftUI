@@ -1,10 +1,11 @@
 name: Pull Request
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - develop
-  workflow_dispatch:
+  
 
 jobs:
   test:
