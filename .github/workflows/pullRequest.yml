@@ -30,7 +30,7 @@ jobs:
           xcode-version: latest-stable
 
       - name: Install Bundler
-        run: gem install bundler
+        run: gem install bundler -v 1.17.2
 
       - name: Install gems
         run: bundle install
