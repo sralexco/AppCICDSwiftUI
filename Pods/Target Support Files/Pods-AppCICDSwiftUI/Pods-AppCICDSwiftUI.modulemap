@@ -1,0 +1,6 @@
+framework module Pods_AppCICDSwiftUI {
+  umbrella header "Pods-AppCICDSwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}
