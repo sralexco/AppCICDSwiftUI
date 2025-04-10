@@ -34,3 +34,6 @@ jobs:
 
       - name: Install gems
         run: bundle install
+
+      - name: Run Tests
+        run: bundle exec fastlane unit_test
