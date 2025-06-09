@@ -64,7 +64,7 @@ platform :ios do
   
     profile_name = "match AppStore com.sralexco.AppCICD" # replace with the name of the profile to use for the build
     output_name = "AppCICDSwiftUI" # specify the name of the .ipa file to generate
-    export_method = "app-store" # specify the export method
+    export_method = "appstore" # specify the export method
   
     match(type: "#{export_method}", force_for_new_devices: true)
     
