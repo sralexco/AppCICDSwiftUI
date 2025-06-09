@@ -1,6 +1,0 @@
-framework module Pods_AppCICDSwiftUITests {
-  umbrella header "Pods-AppCICDSwiftUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

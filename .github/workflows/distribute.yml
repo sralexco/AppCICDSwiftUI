@@ -1,0 +1,49 @@
+name: iOS binary build & upload to TestFlight
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release
+  pull_request:
+    branches:
+      - release
+
+jobs:
+  distribute:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up ruby env
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.0
+          bundler-cache: true
+
+      - name: Create .env file
+        run: |
+          cd ios
+          echo "${{ secrets.APP_ENV_FILE }}" > .env.default
+
+      - name: Install bundler
+        run: gem install bundler
+
+      - name: Install fastlane dependencies
+        run: cd ios && bundle install
+
+      - name: clean pod cache
+        run: |
+          pod cache clean --all
+          npm i
+          cd ios && arch -x86_64 pod install
+          
+      - name: Build & upload iOS binary
+        run: |
+          cd ios && pod install --repo-update 
+          bundle exec fastlane ios build_upload_testflight
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY: ${{ secrets.ASC_PRIVATE_KEY }}

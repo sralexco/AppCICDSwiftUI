@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_AppCICDSwiftUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_AppCICDSwiftUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_AppCICDSwiftUI_AppCICDSwiftUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_AppCICDSwiftUI_AppCICDSwiftUITestsVersionString[];
 
