@@ -9,7 +9,6 @@ target 'AppCICDSwiftUI' do
   pod 'Alamofire'
 
   target 'AppCICDSwiftUITests' do
-    inherit! :search_paths
     # Pods for testing
   end
 
