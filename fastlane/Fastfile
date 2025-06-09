@@ -16,11 +16,14 @@
 default_platform(:ios)
 
 platform :ios do
+
   desc "Builds project and executes unit tests"
   lane :unit_test do |options|
       scan(
         clean: options[:clean],
-        skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution]
+        skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution],
+        verbose: true
       )
   end
+
 end
