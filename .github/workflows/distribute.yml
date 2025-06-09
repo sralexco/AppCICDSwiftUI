@@ -33,6 +33,15 @@ jobs:
         run: |
           pod cache clean --all
           pod install
+
+      - name: Set up SSH for match
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.MATCH_PRIVATE_KEY }}" > ~/.ssh/ci_match_key
+          chmod 600 ~/.ssh/ci_match_key
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo "Host github.com" >> ~/.ssh/config
+          echo "  IdentityFile ~/.ssh/ci_match_key" >> ~/.ssh/config
           
       - name: Build & upload iOS binary
         run: |
