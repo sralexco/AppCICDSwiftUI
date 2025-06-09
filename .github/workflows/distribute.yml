@@ -27,17 +27,17 @@ jobs:
         run: gem install bundler
 
       - name: Install fastlane dependencies
-        run: cd ios && bundle install
+        run: bundle install
 
       - name: clean pod cache
         run: |
           pod cache clean --all
           npm i
-          cd ios && arch -x86_64 pod install
+          arch -x86_64 pod install
           
       - name: Build & upload iOS binary
         run: |
-          cd ios && pod install --repo-update 
+          pod install --repo-update 
           bundle exec fastlane ios build_upload_testflight
         env:
           APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.ASC_KEY_ID }}
