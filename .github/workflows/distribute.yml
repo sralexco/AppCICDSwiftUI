@@ -32,7 +32,6 @@ jobs:
       - name: clean pod cache
         run: |
           pod cache clean --all
-          npm i
           arch -x86_64 pod install
           
       - name: Build & upload iOS binary
