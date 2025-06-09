@@ -21,7 +21,6 @@ jobs:
 
       - name: Create .env file
         run: |
-          cd ios
           echo "${{ secrets.APP_ENV_FILE }}" > .env.default
 
       - name: Install bundler
