@@ -70,7 +70,7 @@ platform :ios do
     
    # build the app
    gym(
-     scheme: "example", # replace with name of your project’s scheme
+     scheme: "AppCICDSwiftUI", # replace with name of your project’s scheme
      output_name: output_name,
      configuration: "Release",
      export_options: {
