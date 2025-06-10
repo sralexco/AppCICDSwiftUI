@@ -66,7 +66,7 @@ platform :ios do
     output_name = "AppCICDSwiftUI" # specify the name of the .ipa file to generate
     export_method = "appstore" # specify the export method
   
-    match(type: "#{export_method}", force_for_new_devices: true)
+    match(type: "#{export_method}", force_for_new_devices: true, readonly: false)
     
    # build the app
    gym(
