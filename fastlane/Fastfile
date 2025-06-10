@@ -104,6 +104,9 @@ platform :ios do
          app_identifier => profile_name # here you can add any additional bundle identifiers and their associated provisioning profiles if you’re also building an app extension or other bundle identifier
        }
      },
+     build_settings: {
+        "DEVELOPMENT_TEAM" => team_id
+     },
      output_directory: "./build"
    )
   end
