@@ -65,6 +65,7 @@ platform :ios do
     profile_name = "match AppStore com.sralexco.AppCICD" # replace with the name of the profile to use for the build
     output_name = "AppCICDSwiftUI" # specify the name of the .ipa file to generate
     export_method = "appstore" # specify the export method
+    team_id = "4LGFTVM7WD"
   
     match(type: "#{export_method}", force_for_new_devices: true, readonly: false)
 
@@ -82,7 +83,8 @@ platform :ios do
       xcodeproj: "AppCICDSwiftUI.xcodeproj",
       target_filter: "AppCICDSwiftUI",
       profile: profile_path,
-      code_signing_identity: "Apple Distribution"
+      code_signing_identity: "Apple Distribution",
+      build_configuration: "Release"
     )
     
    # build the app
@@ -93,6 +95,8 @@ platform :ios do
      configuration: "Release",
      export_options: {
        method: export_method,
+       teamID: team_id,
+       signingStyle: "manual",
        provisioningProfiles: {
          app_identifier => profile_name # here you can add any additional bundle identifiers and their associated provisioning profiles if you’re also building an app extension or other bundle identifier
        }
