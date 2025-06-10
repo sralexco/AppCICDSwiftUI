@@ -73,7 +73,7 @@ platform :ios do
       target_filter: "AppCICDSwiftUI",
       profile: "match AppStore com.sralexco.AppCICD",
       code_signing_identity: "Apple Distribution",
-      team_id: "XXXXXXXXXX"
+      team_id: "4LGFTVM7WD"
     )
     
    # build the app
