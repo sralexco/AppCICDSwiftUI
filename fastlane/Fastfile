@@ -68,8 +68,15 @@ platform :ios do
   
     match(type: "#{export_method}", force_for_new_devices: true, readonly: false)
 
-    profile_path = Actions.lane_context[SharedValues::SIGH_PROFILE_PATH]
+     # 2. Get the profile path from environment variable
+    profile_env_key = "sigh_#{app_identifier}_#{export_method}_profile-path"
+    profile_path = ENV[profile_env_key]
+
     UI.message("Provisioning profile downloaded to: #{profile_path}")
+
+    unless profile_path && File.exist?(profile_path)
+      UI.user_error!("Provisioning profile not found at path: #{profile_path}")
+    end
 
     update_project_provisioning(
       xcodeproj: "AppCICDSwiftUI.xcodeproj",
