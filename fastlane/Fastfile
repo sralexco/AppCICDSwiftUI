@@ -78,9 +78,12 @@ platform :ios do
        method: export_method,
        provisioningProfiles: {
          app_identifier => profile_name # here you can add any additional bundle identifiers and their associated provisioning profiles if you’re also building an app extension or other bundle identifier
-       }
+       },
+       signingStyle: "manual",
+       signingCertificate: "Apple Distribution",
+       teamID: "4LGFTVM7WD"
      },
-     xcargs: "-allowProvisioningUpdates"
+     output_directory: "./build"
    )
   end
 
