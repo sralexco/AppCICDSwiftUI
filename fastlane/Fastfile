@@ -23,7 +23,7 @@ platform :ios do
       type: "adhoc",
       app_identifier: ['com.sralexco.AppCICD'],
       force_for_new_devices: true,
-      readonly: true
+      readonly: false
     )
   end
 
