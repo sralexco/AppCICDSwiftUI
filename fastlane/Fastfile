@@ -84,10 +84,7 @@ platform :ios do
       target_filter: "AppCICDSwiftUI",
       profile: profile_path,
       code_signing_identity: "Apple Distribution",
-      build_configuration: "Release",
-      build_settings: {
-        "DEVELOPMENT_TEAM" => team_id
-      }
+      build_configuration: "Release"
     )
     
    # build the app
