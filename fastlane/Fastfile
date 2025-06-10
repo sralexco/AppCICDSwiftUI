@@ -63,7 +63,7 @@ platform :ios do
     app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
   
     profile_name = "match AppStore com.sralexco.AppCICD" # replace with the name of the profile to use for the build
-    profile_path = ENV["sigh_#{app_identifier}_appstore_profile-path"] # actual path used in update_project_provisioning
+    profile_path = "./.github/certs/app.mobileprovision" # actual path used in update_project_provisioning
     output_name = "AppCICDSwiftUI" # specify the name of the .ipa file to generate
     export_method = "appstore" # specify the export method
   
@@ -75,8 +75,7 @@ platform :ios do
       xcodeproj: "AppCICDSwiftUI.xcodeproj",
       target_filter: "AppCICDSwiftUI",
       profile: profile_path,
-      code_signing_identity: "Apple Distribution",
-      team_id: "4LGFTVM7WD"
+      code_signing_identity: "Apple Distribution"
     )
     
    # build the app
