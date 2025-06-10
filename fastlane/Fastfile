@@ -68,7 +68,7 @@ platform :ios do
   
     match(type: "#{export_method}", force_for_new_devices: true, readonly: false)
 
-    profile_path = ENV["sigh_#{app_identifier}_#{export_method}_profile_path"]
+    profile_path = Actions.lane_context[SharedValues::SIGH_PROFILE_PATH]
     UI.message("Provisioning profile downloaded to: #{profile_path}")
 
     update_project_provisioning(
