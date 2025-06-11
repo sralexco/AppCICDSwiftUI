@@ -57,20 +57,10 @@ platform :ios do
     export_method = "appstore" # specify the export method
     team_id = "4LGFTVM7WD"
   
-    match(type: "#{export_method}", skip_provisioning_profiles: true, readonly: false)
-
-     # 2. Get the profile path from environment variable
-    profile_env_key = "sigh_#{app_identifier}_#{export_method}_profile-path"
-    profile_path = ENV[profile_env_key]
-
-    UI.message("Provisioning profile downloaded to: #{profile_path}")
-
-    unless profile_path && File.exist?(profile_path)
-      UI.user_error!("Provisioning profile not found at path: #{profile_path}")
-    end
+    sync_code_signing(type: "appstore")
  
    # build the app
-   gym(
+   build_app(
      workspace: "AppCICDSwiftUI.xcworkspace",
      scheme: "AppCICDSwiftUI",
      output_name: output_name,
