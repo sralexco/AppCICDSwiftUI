@@ -57,7 +57,10 @@ platform :ios do
     export_method = "appstore" # specify the export method
     team_id = "4LGFTVM7WD"
   
-    sync_code_signing(type: "appstore")
+    sync_code_signing(
+      api_key: lane_context[SharedValues::APP_STORE_CONNECT_API_KEY],
+      type: "appstore"
+    )
  
    # build the app
    build_app(
