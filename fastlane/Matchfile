@@ -1,7 +1,7 @@
-git_url("git@github.com-sralexco:sralexco/AppCICDSwiftUICertificates.git")
+git_url("git@github.com:sralexco/AppCICDSwiftUICertificates.git")
 
 storage_mode("git")
-type("adhoc") # The default type, can be: appstore, adhoc, enterprise or development
+type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 app_identifier(["com.sralexco.AppCICD"])
 username("sr.alexco@gmail.com")
 

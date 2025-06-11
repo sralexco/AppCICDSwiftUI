@@ -49,22 +49,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FA56E6A02DA6E980006430E7 /* AppCICDSwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = AppCICDSwiftUI;
 			sourceTree = "<group>";
 		};
 		FA56E6B12DA6E981006430E7 /* AppCICDSwiftUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = AppCICDSwiftUITests;
 			sourceTree = "<group>";
 		};
 		FA56E6BB2DA6E981006430E7 /* AppCICDSwiftUIUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = AppCICDSwiftUIUITests;
 			sourceTree = "<group>";
 		};
@@ -686,7 +680,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4LGFTVM7WD;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sralexco.AppCICDUITests;
@@ -706,7 +700,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4LGFTVM7WD;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sralexco.AppCICDUITests;
