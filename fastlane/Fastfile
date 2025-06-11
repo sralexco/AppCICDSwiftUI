@@ -68,15 +68,7 @@ platform :ios do
     unless profile_path && File.exist?(profile_path)
       UI.user_error!("Provisioning profile not found at path: #{profile_path}")
     end
-
-    update_project_provisioning(
-      xcodeproj: "AppCICDSwiftUI.xcodeproj",
-      target_filter: "AppCICDSwiftUI",
-      profile: profile_path,
-      code_signing_identity: "Apple Distribution",
-      build_configuration: "Release"
-    )
-    
+ 
    # build the app
    gym(
      workspace: "AppCICDSwiftUI.xcworkspace",
