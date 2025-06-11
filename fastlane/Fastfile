@@ -67,10 +67,19 @@ platform :ios do
       is_key_content_base64: true,
       in_house: false
     )
-      
-    sync_code_signing(
-      api_key: api_key,
-      type: "appstore"
+
+    match(type: "#{export_method}", force_for_new_devices: true, readonly: false)
+
+    # 2. Get the profile path from environment variable
+    profile_env_key = "sigh_#{app_identifier}_#{export_method}_profile-path"
+    profile_path = ENV[profile_env_key]
+     
+    update_project_provisioning(
+      xcodeproj: "AppCICDSwiftUI.xcodeproj",
+      target_filter: "AppCICDSwiftUI",
+      profile: profile_path,
+      code_signing_identity: "Apple Distribution",
+      build_configuration: "Release"
     )
  
    # build the app
@@ -82,11 +91,12 @@ platform :ios do
      export_options: {
        method: export_method,
        teamID: team_id,
-       signingStyle: "automatic"
+       signingStyle: "manual",
+       provisioningProfiles: {
+         app_identifier => profile_name # here you can add any additional bundle identifiers and their associated provisioning profiles if you’re also building an app extension or other bundle identifier
+       }
      },
-     xcargs: "DEVELOPMENT_TEAM=#{team_id} -allowProvisioningUpdates \
-     -authenticationKeyID #{key_id} \
-     -authenticationKeyIssuerID #{issuer_id}",
+     xcargs: "CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=#{team_id} PROVISIONING_PROFILE_SPECIFIER='#{profile_env_key}'",
      output_directory: "./build"
    )
   end
