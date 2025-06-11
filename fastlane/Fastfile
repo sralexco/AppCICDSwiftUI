@@ -57,7 +57,7 @@ platform :ios do
     export_method = "appstore" # specify the export method
     team_id = "4LGFTVM7WD"
   
-    match(type: "#{export_method}", force_for_new_devices: true, readonly: false)
+    match(type: "#{export_method}", skip_provisioning_profiles: true, readonly: false)
 
      # 2. Get the profile path from environment variable
     profile_env_key = "sigh_#{app_identifier}_#{export_method}_profile-path"
@@ -86,10 +86,7 @@ platform :ios do
      export_options: {
        method: export_method,
        teamID: team_id,
-       signingStyle: "manual",
-       provisioningProfiles: {
-         app_identifier => profile_name # here you can add any additional bundle identifiers and their associated provisioning profiles if you’re also building an app extension or other bundle identifier
-       }
+       signingStyle: "automatic"
      },
      xcargs: "DEVELOPMENT_TEAM=#{team_id}",
      output_directory: "./build"
