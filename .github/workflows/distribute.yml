@@ -1,4 +1,4 @@
-name: iOS binary build & upload to TestFlight
+name: iOS binary build - upload to TestFlight
 
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   distribute:
+    name: build_and_upload_testflight
     runs-on: macos-15
     steps:
       - name: Checkout repository
