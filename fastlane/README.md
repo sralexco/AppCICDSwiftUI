@@ -29,4 +29,4 @@ This README.md is auto-generated and will be re-generated every time [_fastlane_
 
 More information about _fastlane_ can be found on [fastlane.tools](https://fastlane.tools).
 
-The documentation of _fastlane_ can be found on [docs.fastlane.tools](https://docs.fastlane.tools). ggxxddppjj
+The documentation of _fastlane_ can be found on [docs.fastlane.tools](https://docs.fastlane.tools). ggxxddppjjpp
