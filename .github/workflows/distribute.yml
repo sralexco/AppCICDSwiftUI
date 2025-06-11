@@ -1,7 +1,6 @@
 name: iOS binary build - upload to TestFlight
 
 on:
-  workflow_dispatch:
   pull_request:
     branches:
       - release
