@@ -70,7 +70,7 @@ platform :ios do
        teamID: team_id,
        signingStyle: "automatic"
      },
-     xcargs: "DEVELOPMENT_TEAM=#{team_id}",
+     xcargs: "DEVELOPMENT_TEAM=#{team_id} -allowProvisioningUpdates",
      output_directory: "./build"
    )
   end
