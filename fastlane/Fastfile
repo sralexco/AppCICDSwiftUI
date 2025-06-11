@@ -57,20 +57,9 @@ platform :ios do
     export_method = "appstore" # specify the export method
     team_id = "4LGFTVM7WD"
 
-    key_id = ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"]
-    issuer_id = ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"]
-
-    api_key = app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-      is_key_content_base64: true,
-      in_house: false
-    )
-
     match(type: "#{export_method}", force_for_new_devices: true, readonly: false)
 
-    # 2. Get the profile path from environment variable
+    # Get the profile path from environment variable
     profile_env_key = "sigh_#{app_identifier}_#{export_method}_profile-path"
     profile_path = ENV[profile_env_key]
      
